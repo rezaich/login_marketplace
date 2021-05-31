@@ -23,7 +23,7 @@ class LoginActivity : AppCompatActivity() {
         crAccount.setOnClickListener {
             startActivity(regis)
         }
-        val home= Intent(application,MainActivity::class.java)
+
         btLogin.setOnClickListener {
             LoginRecord()
         }
@@ -64,6 +64,8 @@ class LoginActivity : AppCompatActivity() {
                         Toast.makeText(
                             this@LoginActivity,
                             "Login Success", Toast.LENGTH_SHORT).show()
+                        val home= Intent(application,MainActivity::class.java)
+                        startActivity(home)
                     } else {
                         Toast.makeText(
                             this@LoginActivity,

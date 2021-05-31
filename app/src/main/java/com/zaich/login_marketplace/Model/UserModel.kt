@@ -1,4 +1,4 @@
-package com.zaich.login_marketplace
+package com.zaich.login_marketplace.Model
 
 data class UserModel(
     val name : String ,

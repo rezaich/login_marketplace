@@ -4,12 +4,11 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import com.zaich.login_marketplace.Model.UserModel
 import kotlinx.android.synthetic.main.activity_register.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import retrofit2.create
-
 
 
 class RegisterActivity : AppCompatActivity() {
@@ -19,10 +18,9 @@ class RegisterActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
 
-        val login = Intent(application,LoginActivity::class.java)
+
         btRegis.setOnClickListener {
             addRecord()
-            startActivity(login)
         }
     }
     fun addRecord(){
@@ -56,6 +54,8 @@ class RegisterActivity : AppCompatActivity() {
                             "Create Account Success",
                             Toast.LENGTH_LONG
                         ).show()
+                        val login = Intent(application,LoginActivity::class.java)
+                        startActivity(login)
                     } else {
                         Toast.makeText(this@RegisterActivity, "Failed response", Toast.LENGTH_LONG).show()
                     }
