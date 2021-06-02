@@ -21,4 +21,8 @@ interface ApiInterface {
 
     @GET("category")
     fun getCategories(@Header("Authorization")authHeader: String): Call<JsonObject>
+
+    @GET("products/searchByCategory/{categoryId}")
+    fun getProductsByCategory(@Header("Authorization")authHeader: String,
+                              @Path("categoryId")id:Int):Call<JsonObject>
 }
